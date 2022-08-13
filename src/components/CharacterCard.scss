@@ -17,6 +17,10 @@
     background-color: rgb(255, 152, 0);
   }
 
+  @media screen and (max-width: 415px) {
+    height: 120px;
+  }
+
   &__image {
     flex: 2.5;
 

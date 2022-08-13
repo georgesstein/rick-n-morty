@@ -9,6 +9,10 @@
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: 415px) {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
   &__body {
     border-radius: 18px;
     max-width: 300px;
