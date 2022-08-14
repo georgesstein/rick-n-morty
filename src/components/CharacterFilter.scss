@@ -1,29 +1,102 @@
+$nativeElementHeight: 24px;
+
+input {
+  min-width: 100px;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 1px solid #000;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+select {
+  border: 0;
+  border-bottom: 1px solid #000;
+  color: #777;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
 .CharacterFilter {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
   position: sticky;
   padding: 15px;
+  top: 0;
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  // box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px rgba(0,0,0, 0.2);
   z-index: 10;
 
+  // header
+  &__Header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+
+    &-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 10px;
+    }
+
+    .ResetButton {
+      width: 100%;
+      height: $nativeElementHeight;
+      align-self: end;
+      background-color: #fff;
+      color: #000;
+      cursor: pointer;
+      border: 1px solid #000;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: #66d9ef;
+      }
+
+      &:disabled {
+        background-color: #fff;
+        opacity: 0.5;
+        cursor: auto;
+      }
+    }
+
+    .OpenCloseFilterButton {
+      width: 100%;
+      height: $nativeElementHeight;
+      align-self: end;
+    }
+  }
+
+  // popup
+  &__Popup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 5px;
+  }
+  
   &__inputs {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 5px;
   }
 
   &__selects {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 5px;
   }
 
   &__item {
-    display: flex;
-    flex-direction: column;
+    display: grid;
 
     label {
       font-size: 10px;
@@ -31,25 +104,11 @@
     }
 
     input {
-      height: 18px;
+      height: $nativeElementHeight;
     }
 
     select {
-      height: 24px;
-    }
-  }
-
-  .ResetButton {
-    height: 24px;
-    align-self: end;
-    background-color: #fff;
-    color: #000;
-    cursor: pointer;
-    border: 1px solid #000;
-    transition: 0.2s;
-
-    &:hover {
-      background-color: #66d9ef;
+      height: $nativeElementHeight;
     }
   }
 }

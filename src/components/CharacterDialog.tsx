@@ -1,8 +1,14 @@
 import './CharacterDialog.scss'
-import { DTO } from '../types'
 
 type Props = {
-  data: DTO.Character
+  name: string
+  status: string
+  species: string
+  type: string
+  gender: string
+  originName: string
+  locationName: string
+  imageUrl: string
   hide: () => void
 }
 
@@ -19,12 +25,12 @@ function CharacterDetail(p: { label: string; value: string }) {
 
 export default function CharacterDialog(p: Props) {
   const details: Array<[label: string, value: string]> = [
-    ['type', p.data.type],
-    ['status', p.data.status],
-    ['species', p.data.species],
-    ['gender', p.data.gender],
-    ['origin', p.data.origin.name],
-    ['location', p.data.location.name],
+    ['type', p.type],
+    ['status', p.status],
+    ['species', p.species],
+    ['gender', p.gender],
+    ['origin', p.originName],
+    ['location', p.locationName],
   ]
 
   return (
@@ -32,10 +38,10 @@ export default function CharacterDialog(p: Props) {
       <div className="CharacterDialog" onClick={p.hide}>
         <div className="CharacterDialog__body" onClick={(e) => e.stopPropagation()}>
           <div className="CharacterDialog__image">
-            <img src={p.data.image} alt={p.data.name} />
+            <img src={p.imageUrl} alt={p.name} />
           </div>
 
-          <div className="CharacterDialog__title">{p.data.name}</div>
+          <div className="CharacterDialog__title">{p.name}</div>
 
           <div className="CharacterDialog__details">
             {details.map(([label, value]) => (

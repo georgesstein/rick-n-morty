@@ -8,7 +8,7 @@ import { DTO } from '../types'
 type Props = {
   data: ICharactersGallery.Data
   loadMore: ICharactersGallery.LoadMore
-  showCharacterDialog: (characterId: DTO.CharacterId) => void
+  onCharacterCardClick: (characterId: DTO.CharacterId) => void
 }
 
 export default function CharactersGallery(p: Props) {
@@ -32,7 +32,7 @@ export default function CharactersGallery(p: Props) {
     <div className='CharactersGallery'>
       {p.data.characters.map(x => (
         <CharacterCard
-          onClick={() => p.showCharacterDialog(x.id)}
+          onClick={() => p.onCharacterCardClick(x.id)}
           key={x.id}
           name={x.name}
           status={x.status}
