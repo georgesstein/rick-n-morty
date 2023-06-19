@@ -9,4 +9,4 @@ npm start
 ```
 
 ## Deployed app
-https://rick-n-morty-widget.herokuapp.com/
+[rick-n-morty-widget](https://rick-n-morty-widget.vercel.app/)
